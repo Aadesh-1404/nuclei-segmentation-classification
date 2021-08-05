@@ -29,19 +29,33 @@ Images are in .tif format and boundary annotations are  .xml files.
 
 ## Experiment 1(a):-
 
-I first analysed the Mask-RCNN model as suggested in the [paper](https://arxiv.org/abs/1703.06870). Used [TORCHVISION OBJECT DETECTION FINETUNING TUTORIAL](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html) to segment nuclei in MoNuSeg dataset. Used the pretrained(COCO weights)  torchvision.models.detection.maskrcnn_resnet50_fpn model and fine tuned the three branches on the MoNuSeg dataset. Dice + binary cross entropy was used as the Loss function of Mask branch.
+I first analysed the Mask-RCNN model as suggested in the [paper](https://arxiv.org/abs/1703.06870). Used [TORCHVISION OBJECT DETECTION FINETUNING TUTORIAL](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html) to segment nuclei in MoNuSeg dataset. Firstly, Used [XML_to_Binary](https://drive.google.com/file/d/15oAnCnPchvn40U4h_mwgoTArlpBs2gK3/view?usp=sharing) code for reading xml annotations and creating binary masks and then created Non-Overlapping patches of images & masks of size 250x250 from original size of 1000x1000. Used the pretrained(COCO weights)  torchvision.models.detection.maskrcnn_resnet50_fpn model and fine tuned the three branches on the MoNuSeg dataset. Dice + binary cross entropy was used as the Loss function of Mask branch. Also, used helper functions like augmentation before training.
 
 ### Conclusion:
 
-Got good predictions by using the fine tuned weights. The confidence score > 0.5 was used to detect the nuclei in the test images.
-The results on one of the images is shown below:
+Got good predictions by using the [fine tuned weights](https://drive.google.com/file/d/1vI48TkKg-0KSmatR2nNDmEf_d_8swGcp/view?usp=sharing). The confidence score > 0.5 was used to detect the nuclei in the test images.
+The results on one of the images is shown below: The model was able to detect 263 nuclei.
 
 Original Test Image            |  Predicted Masks
 :-------------------------:|:-------------------------:
 <img src=https://user-images.githubusercontent.com/68186100/128328052-b09556f8-2d5f-420f-adc9-d11e036e5394.png width="500" height="500"> |<img src=https://user-images.githubusercontent.com/68186100/128327748-bef87a93-e899-4ce3-9811-3308693ab5b0.png width="500" height="500">
 
+The file ```Maskrcnn_pytorch_FineTuning.ipynb``` in the folder ```MoNuSeg- Exp1(a)``` contains the code.
 
+## Experiment 1(b):-
 
+To experiment the Mask-RCNN model with different loss functions ```[Matterport Mask-RCNN](https://github.com/matterport/Mask_RCNN/blob/master/mrcnn/model.py)``` was used.
+Loss funtions like **Binary Cross-Entropy loss , Focal loss & Binary + Dice loss** were tried out. 
+
+First, Read the xml annotations and created masks of individual nuclei and saved it as .png format using the [code](https://drive.google.com/file/d/1wprt3MR8XwrF4xZO5KbUUhW9ZA2gF7FJ/view?usp=sharing). Then, created Non-Overlapping patches of images & masks of size 500x500 from original size of 1000x1000. Also, used additional 2018 Data Science Bowl dataset to increase the length of training dataset. 
+
+The folder ```MoNuSeg- Exp1(b)``` contains all the files for this experiment. The ```mrcnn_matterport.py``` file contains the main parts of the code, which when run trains the model or detects the nuclei using the commands used in ```MRCNN_Matterport_train.ipynb```. 
+Two Jupyter notebooks are provided as well:```MRCNN_Data_Visualisation.ipynb``` and ```MRCNN_Inference.ipynb``` explores the dataset, run stats on it, and goes through the detection process step by step.
+
+### Conclusions:
+
+Training loss and Validation loss decreases with increasing epochs as seen in figure below:
+<img src=https://user-images.githubusercontent.com/68186100/128333760-bd388de7-7792-4e83-b017-64ca6d83f44e.png width="500" height="500">
 
 
 
