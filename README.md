@@ -29,3 +29,10 @@ Images are in .tif format and boundary annotations are  .xml files.
 
 ## Experiment 1(a):-
 
+I first analysed the Mask-RCNN model as suggested in the [paper](https://arxiv.org/abs/1703.06870). Used TORCHVISION [OBJECT DETECTION FINETUNING TUTORIAL](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html) to segment nuclei in MoNuSeg dataset. Used the pretrained(COCO weights)  torchvision.models.detection.maskrcnn_resnet50_fpn model and fine tuned the three branches on the MoNuSeg dataset.
+
+### Conclusion:
+
+
+
+
