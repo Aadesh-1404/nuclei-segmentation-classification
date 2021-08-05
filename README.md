@@ -44,10 +44,10 @@ The file ```Maskrcnn_pytorch_FineTuning.ipynb``` in the folder ```MoNuSeg- Exp1(
 
 ## Experiment 1(b):-
 
-To experiment the Mask-RCNN model with different loss functions ```[Matterport Mask-RCNN](https://github.com/matterport/Mask_RCNN/blob/master/mrcnn/model.py)``` was used.
+To experiment the Mask-RCNN model with different loss functions [Matterport Mask-RCNN](https://github.com/matterport/Mask_RCNN/blob/master/mrcnn/model.py) was used.
 Loss funtions like **Binary Cross-Entropy loss , Focal loss & Binary + Dice loss** were tried out. 
 
-First, Read the xml annotations and created masks of individual nuclei and saved it as .png format using the [code](https://drive.google.com/file/d/1wprt3MR8XwrF4xZO5KbUUhW9ZA2gF7FJ/view?usp=sharing). Then, created Non-Overlapping patches of images & masks of size 500x500 from original size of 1000x1000. Also, used additional 2018 Data Science Bowl dataset to increase the length of training dataset. 
+First, Read the xml annotations and created masks of individual nuclei and saved it as .png format using the [code](https://drive.google.com/file/d/1wprt3MR8XwrF4xZO5KbUUhW9ZA2gF7FJ/view?usp=sharing). Then, created Non-Overlapping patches of images & masks of size 500x500 from original size of 1000x1000. Also, used additional 2018 Data Science Bowl dataset to increase the length of training dataset. I trained the Mask-RCNN model from scratch and got the results.
 
 The folder ```MoNuSeg- Exp1(b)``` contains all the files for this experiment. The ```mrcnn_matterport.py``` file contains the main parts of the code, which when run trains the model or detects the nuclei using the commands used in ```MRCNN_Matterport_train.ipynb```. 
 Two Jupyter notebooks are provided as well:```MRCNN_Data_Visualisation.ipynb``` and ```MRCNN_Inference.ipynb``` explores the dataset, run stats on it, and goes through the detection process step by step.
@@ -55,8 +55,17 @@ Two Jupyter notebooks are provided as well:```MRCNN_Data_Visualisation.ipynb``` 
 ### Conclusions:
 
 Training loss and Validation loss decreases with increasing epochs as seen in figure below:
+
 <img src=https://user-images.githubusercontent.com/68186100/128333760-bd388de7-7792-4e83-b017-64ca6d83f44e.png width="500" height="500">
 
+1) The Binary Cross-Entropy loss with COCO pretrained weights gave the best results on many test images, with **mAP @0.5 = 0.5487 and Mean AP(@0.5-0.95) over 5 images = 0.1762**
+2) Focal loss with Imagenet pretrained weights provided extremely well results on selected images.
 
+The results were very good. Some of the results can be seen below:
+
+Original Test Image            |  Predicted Boundaries   | Predicted Masks
+:-------------------------:|:-------------------------:|:--------------------------:
+
+<img src=https://user-images.githubusercontent.com/68186100/128335537-cd299b1f-fd76-4cf4-91cb-d161766e4689.png width="250" height="250"> |<img src=https://user-images.githubusercontent.com/68186100/128335523-dd17cbde-3792-43dd-b286-c1e7d307d4dc.png width="250" height="250"> | <img src= https://user-images.githubusercontent.com/68186100/128335539-cd310532-9218-4862-95b8-f8f88bdd8162.png width"250" height="250">
 
 
