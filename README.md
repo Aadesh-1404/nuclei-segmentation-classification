@@ -63,9 +63,9 @@ Training loss and Validation loss decreases with increasing epochs as seen in fi
 
 The results were very good. Some of the results can be seen below:
 
-Original Test Image            |  Predicted Boundaries   | Predicted Masks
-:-------------------------:|:-------------------------:|:--------------------------:
+<img src=https://user-images.githubusercontent.com/68186100/128336646-989cf31c-bd50-432c-ae37-bc0e6d00f83c.jpeg width="500" height="500">
+<img src=https://user-images.githubusercontent.com/68186100/128336838-45d6d125-9289-4d04-95c1-34191ae920e0.jpeg width="500" height="500">
+<img src=https://user-images.githubusercontent.com/68186100/128337054-57547633-177c-445c-9622-11a5f6ab5a74.jpeg width="500" height="500">
 
-<img src=https://user-images.githubusercontent.com/68186100/128335537-cd299b1f-fd76-4cf4-91cb-d161766e4689.png width="250" height="250"> |<img src=https://user-images.githubusercontent.com/68186100/128335523-dd17cbde-3792-43dd-b286-c1e7d307d4dc.png width="250" height="250"> | <img src=https://user-images.githubusercontent.com/68186100/128335539-cd310532-9218-4862-95b8-f8f88bdd8162.png width"250" height="250">
 
 
