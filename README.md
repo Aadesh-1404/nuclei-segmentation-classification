@@ -19,7 +19,7 @@ In cancer pathology, the presence and mix of  immune cells that are seen in and 
 # MoNuSeg Dataset
 
 The Dataset contains:
-- Annotated tissue images of several patients with tumors of different organs, diagnosed at multiple hospitals.
+- Annotated tissue images of 30 patients with tumors of different organs, diagnosed at multiple hospitals.
 - H&E stained tissue images captured at 40x magnification from [TCGA](http://cancergenome.nih.gov/) archive. 
 
 [Training data](https://drive.google.com/file/d/1JZN9Jq9km0rZNiYNEukE_8f0CsSK3Pe4/view?usp=sharing): 30 images & around 22,000 nuclear boundary annotations.
@@ -64,8 +64,20 @@ Training loss and Validation loss decreases with increasing epochs as seen in fi
 The results were very good. Some of the results can be seen below:
 
 <img src=https://user-images.githubusercontent.com/68186100/128336646-989cf31c-bd50-432c-ae37-bc0e6d00f83c.jpeg>
-<img src=https://user-images.githubusercontent.com/68186100/128336838-45d6d125-9289-4d04-95c1-34191ae920e0.jpeg width="500" height="500">
-<img src=https://user-images.githubusercontent.com/68186100/128337054-57547633-177c-445c-9622-11a5f6ab5a74.jpeg width="500" height="500">
+<img src=https://user-images.githubusercontent.com/68186100/128336838-45d6d125-9289-4d04-95c1-34191ae920e0.jpeg>
+
+More results can be found in ```Results``` folder.
+
+## Experiment 2:-
+
+The U-Net network can work with very few training images and yield more precise segmentations, hence work would have been incomplete without exploring this model for the Nuclei segmentation task. The code for the network can be found in the file ```Unet_MoNuSeg.ipynb``` in the ```MoNuSeg- Exp2``` folder. The model was trained from scratch on MoNuSeg dataset and the following results were obtained:-
+
+The second image is the Ground truth masks and the third image is the predicted masks.
+
+![exp2](https://user-images.githubusercontent.com/68186100/128338166-a0ba801a-b37d-41f3-b512-29f2b70d2f03.jpeg)
+
+
+
 
 
 
