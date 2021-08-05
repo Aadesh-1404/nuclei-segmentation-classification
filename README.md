@@ -38,8 +38,7 @@ The results on one of the images is shown below:
 
 Original Test Image            |  Predicted Masks
 :-------------------------:|:-------------------------:
-<img src=https://user-images.githubusercontent.com/68186100/128328052-b09556f8-2d5f-420f-adc9-d11e036e5394.png width="500" height="500"> | 
-<img src=https://user-images.githubusercontent.com/68186100/128327748-bef87a93-e899-4ce3-9811-3308693ab5b0.png width="100" height="100">
+<img src=https://user-images.githubusercontent.com/68186100/128328052-b09556f8-2d5f-420f-adc9-d11e036e5394.png width="500" height="500"> |<img src=https://user-images.githubusercontent.com/68186100/128327748-bef87a93-e899-4ce3-9811-3308693ab5b0.png width="500" height="500">
 
 
 
