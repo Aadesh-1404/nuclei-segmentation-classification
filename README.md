@@ -36,9 +36,12 @@ I first analysed the Mask-RCNN model as suggested in the [paper](https://arxiv.o
 Got good predictions by using the fine tuned weights. The confidence score > 0.5 was used to detect the nuclei in the test images.
 The results on one of the images is shown below:
 
-<img src=https://user-images.githubusercontent.com/68186100/128328052-b09556f8-2d5f-420f-adc9-d11e036e5394.png width="100" height="100">
-
+Original Test Image            |  Predicted Masks
+:-------------------------:|:-------------------------:
+<img src=https://user-images.githubusercontent.com/68186100/128328052-b09556f8-2d5f-420f-adc9-d11e036e5394.png width="500" height="500"> | 
 <img src=https://user-images.githubusercontent.com/68186100/128327748-bef87a93-e899-4ce3-9811-3308693ab5b0.png width="100" height="100">
+
+
 
 
 
