@@ -10,5 +10,5 @@ In cancer pathology, the presence and mix of  immune cells that are seen in and 
 
 # Building Nuclei Segmentation Methods
 
-***Mask-RCNN, Hover-Net, U-Net, PatchEUNet*** were studied and implemented. 
-- 
+**Mask-RCNN, Hover-Net, U-Net, PatchEUNet** were studied and implemented. 
+- The file **MaskRCNN_Scratch.ipynb** contains a Mask-RCNN code in Pytorch build from scratch. The model built has some faults needs some minor changes for an entire dataset to train.
