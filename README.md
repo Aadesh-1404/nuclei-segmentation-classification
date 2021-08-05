@@ -109,7 +109,7 @@ Image showing the classification of the 4 cells:
 ![pred](https://user-images.githubusercontent.com/68186100/128340991-a7e3bd41-fcc0-485d-ae87-7056b2ed6942.png)
 
 
-# The results obtained were good enough but there can be futher improvement in results by using Other Nuclei Segmentation Methods/ Models, experimenting various Loss functions and also tuning of Hyperparameters.
+### The results obtained were good enough but there can be futher improvement in results by using Other Nuclei Segmentation Methods/ Models, experimenting various Loss functions and also tuning of Hyperparameters.
 
 # Acknowledgement 
 Prof. Amit Sethi for providing this opportunity to explore the field of medical imaging segmentation using Computer Vision, Machine Learning.
