@@ -52,6 +52,8 @@ First, Read the xml annotations and created masks of individual nuclei and saved
 The folder ```MoNuSeg- Exp1(b)``` contains all the files for this experiment. The ```mrcnn_matterport.py``` file contains the main parts of the code, which when run trains the model or detects the nuclei using the commands used in ```MRCNN_Matterport_train.ipynb```. 
 Two Jupyter notebooks are provided as well:```MRCNN_Data_Visualisation.ipynb``` and ```MRCNN_Inference.ipynb``` explores the dataset, run stats on it, and goes through the detection process step by step.
 
+Here is the the [training](https://drive.google.com/drive/folders/1WW45nYX0MF3f5Akw98cFpAMMhxJaWdJ9?usp=sharing) and [testing](https://drive.google.com/drive/folders/14st29nEtU7CIubNZbo_g84lpdE4GQ41a?usp=sharing) obtained after preprocessing.
+
 ### Conclusions:
 
 Training loss and Validation loss decreases with increasing epochs as seen in figure below:
@@ -68,9 +70,11 @@ The results were very good. Some of the results can be seen below:
 
 More results can be found in ```Results``` folder.
 
+The trained weights can be accessed [here](https://drive.google.com/file/d/10X1ZOT4Aoy4QJ_O_ZMlKbcSK9ouRVTWc/view?usp=sharing).
+
 ## Experiment 2:-
 
-The U-Net network can work with very few training images and yield more precise segmentations, hence work would have been incomplete without exploring this model for the Nuclei segmentation task. The code for the network can be found in the file ```Unet_MoNuSeg.ipynb``` in the ```MoNuSeg- Exp2``` folder. The model was trained from scratch on MoNuSeg dataset and the following results were obtained:-
+The U-Net network can work with very few training images and yield more precise segmentations, hence work would have been incomplete without exploring this model for the Nuclei segmentation task. The code for the network can be found in the file ```Unet_MoNuSeg.ipynb``` in the ```MoNuSeg- Exp2``` folder. The model was trained from scratch on MoNuSeg dataset and tremendous results were obtained. Some of the result are shown below:-
 
 The second image is the Ground truth masks and the third image is the predicted masks.
 
@@ -78,6 +82,37 @@ The second image is the Ground truth masks and the third image is the predicted 
 
 
 
+# MoNuSAC Dataset
+The dataset contains annotated dataset of H&E stained digitized tissue images from 4 different organs (Lung, Prostate, Kidney, and Breast) of several patients acquired at multiple hospitals using one of the most common 40x scanner magnification. The datasets includes images in .svs & .tif format and nuclear boundary annotations in .xml files.
+
+Here is the [testing](https://drive.google.com/file/d/1G54vsOdxWY1hG7dzmkeK3r0xz9s-heyQ/view?usp=sharing) and [training](https://drive.google.com/file/d/1lxMZaAPSpEHLSxGA9KKMt_r-4S8dwLhq/view) data. 
+
+## PatchEUNet Model
+
+Analysed and Followed the steps suggested in the [Github](https://github.com/hasibzunair/MoNuSAC-ISBI-2020) and trained the model from scratch using MoNuSAC dataset.
+First, the H&E stained images(.svs) were used along with associated xml files to generate binary masks of each annotated cell-type using [code](https://github.com/ruchikaverma-iitg/MoNuSAC/blob/master/Binary_mask_generation.ipynb) provided by MoNuSAC’20. Then, combined the binary masks of each annotated cell-type in a single mask and created a folder containing images & the ground truth masks and finally created overlapping patches of images and masks of size 128x128 with step size: 110.
+
+Here is the [training](https://drive.google.com/drive/folders/1nk5iEdMsZGly-3rxmt9vkICXMthbICRP?usp=sharing) dataset finally obtained after preprocessing.
+
+The codes for the model can be found in ```MoNuSAC``` folder: ```MoNuSac_Train.ipynb``` contains all the training part of the model, ```MoNuSac_Data_Preparation.ipynb``` contains the preprocesssing of the datasets, ```MoNuSac_Inference.ipynb``` contains the code for detecting nuclei on test images.
+
+### Conclusions:
+
+Obtained a Mean Panoptic Quality score without filer of **0.448**. The results obtained were good with few false negatives. The trained weights can be accessed from [here](https://drive.google.com/file/d/1-8v-bOZz3bYlVmxjQIBYAw5sz_3s3eXq/view?usp=sharing). Few results are displayed below:-
+
+Here, ‘Background’ = “black",'Epithelial' = "red", 'Lymphocyte' = "yellow", 'Neutrophil' = "blue", 'Macrophage' = "green".
+
+![3](https://user-images.githubusercontent.com/68186100/128340885-11aa431e-82a2-4cae-a1fa-914c45d6c204.jpeg)
+
+Image showing the classification of the 4 cells:
+
+![pred](https://user-images.githubusercontent.com/68186100/128340991-a7e3bd41-fcc0-485d-ae87-7056b2ed6942.png)
+
+
+# The results obtained were good enough but there can be futher improvement in results by using Other Nuclei Segmentation Methods/ Models, experimenting various Loss functions and also tuning of Hyperparameters.
+
+# Acknowledgement 
+Prof. Amit Sethi for providing this opportunity to explore the field of medical imaging segmentation using Computer Vision, Machine Learning.
 
 
 
