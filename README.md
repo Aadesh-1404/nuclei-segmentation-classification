@@ -23,5 +23,9 @@ The Dataset contains:
 - H&E stained tissue images captured at 40x magnification from [TCGA](http://cancergenome.nih.gov/) archive. 
 
 [Training data](https://drive.google.com/file/d/1JZN9Jq9km0rZNiYNEukE_8f0CsSK3Pe4/view?usp=sharing): 30 images & around 22,000 nuclear boundary annotations.
+
 [Test data](https://drive.google.com/file/d/1NKkSQ5T0ZNQ8aUhh0a8Dt2YKYCQXIViw/view?usp=sharing): 14 images & around 7000 nuclear boundary annotations.
 Images are in .tif format and boundary annotations are  .xml files.
+
+## Experiment 1(a):-
+
