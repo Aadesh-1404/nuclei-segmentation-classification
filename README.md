@@ -12,3 +12,15 @@ In cancer pathology, the presence and mix of  immune cells that are seen in and 
 
 **Mask-RCNN, Hover-Net, U-Net, PatchEUNet** were studied and implemented. 
 - The file ```MaskRCNN_Scratch.ipynb``` contains a Mask-RCNN code in Pytorch build from scratch. The model built has some faults needs some minor changes for an entire dataset to train.
+- The file ```HoVerNet_Pytorch_from_scratch.ipynb``` contains a Hover-Net code in Pytorch build from scratch. The model built can be trained on a datset but does not contain the postprocessing and inference steps, adding this steps cam provide results on any dataset.
+- The file ```Unet_MoNuSeg.ipynb``` contains a complete-tested U-Net model built in Keras-tensorflow.
+- PatchEUnet model was built using **Segmentation Models Python API**.
+
+# MoNuSeg Dataset
+
+The Dataset contains:
+- Annotated tissue images of several patients with tumors of different organs, diagnosed at multiple hospitals.
+- H&E stained tissue images captured at 40x magnification from [TCGA](http://cancergenome.nih.gov/) archive. 
+[Training data](https://drive.google.com/file/d/1JZN9Jq9km0rZNiYNEukE_8f0CsSK3Pe4/view?usp=sharing): 30 images & around 22,000 nuclear boundary annotations.
+[Test data](https://drive.google.com/file/d/1NKkSQ5T0ZNQ8aUhh0a8Dt2YKYCQXIViw/view?usp=sharing): 14 images & around 7000 nuclear boundary annotations.
+Images are in .tif format and boundary annotations are  .xml files.
